@@ -172,43 +172,43 @@ function comparePlacements(a, b, popover = {}) {
 }
 
 function getPlacementMaxHeight(placement, space, referenceBox) {
-  const [a, b] = PLACEMENTS.split('_');
+  const [a, b] = placement.split('-');
 
   // TOP_LEFT, TOP_CENTER, TOP_RIGHT
-  if (a === 'TOP') return space.top;
+  if (a === 'top') return space.top;
 
   // BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT
   if (a === 'BOTTOM') return space.bottom;
 
   // RIGHT_TOP, LEFT_TOP
-  if (b === 'TOP') return referenceBox.height + space.bottom;
+  if (b === 'top') return referenceBox.height + space.bottom;
 
   // RIGHT_CENTER, LEFT_CENTER
-  if (b === 'CENTER') return referenceBox.height + (Math.min(space.top, space.bottom) * 2);
+  if (b === 'center') return referenceBox.height + (Math.min(space.top, space.bottom) * 2);
 
   // RIGHT_BOTTOM, LEFT_BOTTOM
-  if (b === 'BOTTOM') return referenceBox.height + space.top;
+  if (b === 'bottom') return referenceBox.height + space.top;
 
   return 0;
 }
 
 function getPlacementMaxWidth(placement, space, referenceBox) {
-  const [a, b] = PLACEMENTS.split('_');
+  const [a, b] = placement.split('-');
 
   // RIGHT_TOP, RIGHT_CENTER, RIGHT_BOTTOM
-  if (a === 'RIGHT') return space.right;
+  if (a === 'right') return space.right;
 
   // LEFT_TOP, LEFT_CENTER, LEFT_BOTTOM
-  if (a === 'LEFT') return space.left;
+  if (a === 'left') return space.left;
 
   // TOP_LEFT, BOTTOM_LEFT
-  if (b === 'LEFT') return referenceBox.width + space.right;
+  if (b === 'left') return referenceBox.width + space.right;
 
   // TOP_CENTER, BOTTOM_CENTER
-  if (b === 'CENTER') return referenceBox.width + (Math.min(space.left, space.right) * 2);
+  if (b === 'center') return referenceBox.width + (Math.min(space.left, space.right) * 2);
 
   // TOP_RIGHT, BOTTOM_RIGHT
-  if (b === 'RIGHT') return referenceBox.width + space.left;
+  if (b === 'right') return referenceBox.width + space.left;
 
   return 0;
 }
