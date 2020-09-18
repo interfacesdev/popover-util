@@ -178,7 +178,7 @@ function getPlacementMaxHeight(placement, space, referenceBox) {
   if (a === 'top') return space.top;
 
   // BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT
-  if (a === 'BOTTOM') return space.bottom;
+  if (a === 'bottom') return space.bottom;
 
   // RIGHT_TOP, LEFT_TOP
   if (b === 'top') return referenceBox.height + space.bottom;
